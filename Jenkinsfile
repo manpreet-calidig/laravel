@@ -15,13 +15,8 @@ pipeline {
         
         stage('Package Build') {
         sh "tar -zcvf bundle.tar.gz ."
+        echo "Tar completed"
         
-        }
-        
-        stage('Artifacts Creation') {
-        fingerprint 'bundle.tar.gz'
-        archiveArtifacts 'bundle.tar.gz'
-        echo "Artifacts created"
         }
         
         stage('Stash changes') {
