@@ -19,6 +19,20 @@ pipeline {
             }
         }
         
+        stage("Artifacts Creation") {
+            steps {    
+				fingerprint 'bundle.tar.gz'
+				archiveArtifacts 'bundle.tar.gz'
+				echo "Artifacts created"
+            }
+        }
+        
+        stage("Stash changes") {
+            steps {    
+                stash allowEmpty: true, includes: 'bundle.tar.gz', name: 'buildArtifacts'
+            }
+        }
+        
         
     }
 }
