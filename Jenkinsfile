@@ -14,9 +14,8 @@ pipeline {
         }
         
         stage("Package Build") {
-            steps {
-                def workspace = pwd()    
-                sh "tar -zcvf bundle.tar.gz ${workspace}"
+            steps {    
+                sh "tar -zcvf bundle.tar.gz *"
             }
         }
         
