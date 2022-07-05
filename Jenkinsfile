@@ -12,10 +12,13 @@ pipeline {
                 echo "Build completed"
             }
         }
-        stage('Package Build') {
-                def workspace = WORKSPACE
-                sh "tar -zcvf bundle.tar.gz ${workspace}"
+        
+        stage("Package Build") {
+            steps {
+                sh "tar -zcvf bundle.tar.gz ."
+            }
         }
+        
         
     }
 }
