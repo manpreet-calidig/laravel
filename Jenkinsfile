@@ -15,7 +15,7 @@ pipeline {
         
         stage("Package Build") {
             steps {
-                sh "tar -zcvf bundle.tar.gz ."
+                sh "tar -zcvf bundle.tar.gz"
             }
         }
         
