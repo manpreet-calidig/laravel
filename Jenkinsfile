@@ -13,8 +13,8 @@ pipeline {
             }
         }
         stage('Package Build') {
-        def workspace = WORKSPACE
-        sh "tar -zcvf bundle.tar.gz ${workspace}"
+                def workspace = WORKSPACE
+                sh "tar -zcvf bundle.tar.gz ${workspace}"
         }
         
     }
