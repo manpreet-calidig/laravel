@@ -7,7 +7,7 @@ pipeline {
                 sh 'php --version'
                 sh 'composer install'
                 sh 'composer --version'
-                sh 'mv .env.example .env'
+                sh 'cp .env.example .env'
                 sh 'php artisan key:generate'
                 echo "Build completed"
             }
