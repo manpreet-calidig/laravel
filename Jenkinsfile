@@ -38,7 +38,7 @@ pipeline {
     
 }
 
-node('awslaravel') {
+node('laravelnode') {
 	echo 'Unstash'
 	unstash 'buildArtifacts'
 	echo 'Artifacts copied'
