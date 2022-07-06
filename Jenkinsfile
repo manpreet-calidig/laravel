@@ -15,7 +15,7 @@ pipeline {
         
         stage("Package Build") {
             steps {    
-                sh "tar -zcvf bundle.tar.gz /var/lib/jenkins/workspace/MyBuddyBackend"
+                sh "tar -zcvf bundle.tar.gz ./"
             }
         }
         
